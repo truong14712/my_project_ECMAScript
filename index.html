@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+
+    .li {
+      position: relative;
+    }
+
+    .li>.a::after {
+      position: absolute;
+      content: "";
+      height: 4px;
+      width: 0px;
+      background-color: #0d5cb6;
+      bottom: -4px;
+      left: 0;
+      transition: 0.3s ease-in;
+    }
+
+    .lia>.aa::before {
+      position: absolute;
+      content: "";
+      height: 4px;
+      width: 72px;
+      background-color: #0d5cb6;
+      bottom: -18px;
+      left: 10px;
+    }
+
+    .li:hover>.a::after {
+      position: absolute;
+      width: 72px;
+      left: 10px;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    a:hover {
+      color: #0d5cb6;
+      transition: 0.3s ease-in;
+    }
+
+    #pro:hover {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      opacity: 0.8;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app"></div>
+</body>
+<script type="module" src="./src/main.js"></script>
+
+</html>
