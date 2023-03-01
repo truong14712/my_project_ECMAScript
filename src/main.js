@@ -16,6 +16,21 @@ import CartPage from "./pages/cart";
 // Khai bao DOM
 const app = document.querySelector("#app");
 // Router
+
+router.on("/admin/*", () => {}, {
+  before: (done) => {
+    if (localStorage.getItem("user")) {
+      console.log("Admin");
+      const userId = JSON.parse(localStorage.getItem("user")).id;
+      if (userId === 1) {
+        done();
+      } else {
+        window.location.href = "/";
+      }
+    }
+  },
+});
+
 router.on({
   "/": () => {
     render(HomePage, app);

@@ -1,12 +1,7 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { useState, useEffect } from "@/utilities";
-import {
-  increaseQty,
-  decreaseQty,
-  removeItemInCart,
-  TotalMoney,
-} from "@/utilities/cart";
+import { increaseQty, decreaseQty, removeItemInCart } from "@/utilities/cart";
 const CartPage = () => {
   let cart = [];
   if (localStorage.getItem("cart")) {
@@ -14,8 +9,7 @@ const CartPage = () => {
   }
   useEffect(() => {
     const btns = document.querySelectorAll(".btn");
-
-    btns.forEach((btn) => {
+    for (const btn of btns) {
       const id = btn.dataset.id;
       btn.addEventListener("click", () => {
         if (btn.classList.contains("btn-increase")) {
@@ -25,9 +19,8 @@ const CartPage = () => {
         } else {
           removeItemInCart(id);
         }
-        TotalMoney(id);
       });
-    });
+    }
   });
 
   return /*html*/ `
@@ -52,13 +45,10 @@ const CartPage = () => {
                   Số lượng
                 </th>
                 <th scope="col" class="text-sm font-medium text-white px-6 py-4 text-left">
-                Chức năng
+                Cộng trừ
               </th>
-              
               <th scope="col" class="text-sm font-medium text-white px-6 py-4 text-left">
-            </th>
-            <th scope="col" class="text-sm font-medium text-white px-6 py-4 text-left">
-              Giá tiền
+              Chức năng
             </th>
               </tr>
             </thead>
